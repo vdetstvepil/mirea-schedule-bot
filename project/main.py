@@ -2,6 +2,7 @@ import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 from vk_api.utils import get_random_id
 
+import dbFunctions
 import parameters
 import timeTable
 
@@ -30,5 +31,7 @@ def botListen():
 
 
 if __name__ == '__main__':
-    timeTable.get_timetable()
-   # botListen()
+    dbFunctions.loadDb()
+    timeTable.init_timetable()
+
+    botListen()
