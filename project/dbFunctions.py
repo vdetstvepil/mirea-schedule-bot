@@ -16,6 +16,8 @@ def createDb():
     cursor.execute(command)
     command = "CREATE TABLE timetable_updates(id INTEGER PRIMARY KEY AUTOINCREMENT, session TIMESTAMP);"
     cursor.execute(command)
+    command = "CREATE TABLE users(id INTEGER PRIMARY KEY, group_name VARCHAR(10));"
+    cursor.execute(command)
     cursor.close()
     sqlite_connection.commit()
     print("Tables created")

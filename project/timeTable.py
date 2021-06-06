@@ -62,6 +62,12 @@ def get_timetable():
 
 def insert_timetable_into_db(dictTimetables):
     print("Inserting to database started.")
+
+    sqlite_connection = dbFunctions.sqlite_connection
+    cursor = sqlite_connection.cursor()
+    command = "DELETE FROM timetable_pairs;"
+    cursor.execute(command)
+
     xlsx = openpyxl.load_workbook('file1.xlsx')
     ws = xlsx.active
 
@@ -78,8 +84,7 @@ def insert_timetable_into_db(dictTimetables):
     # print(ws["F2"].value)
     # print(ws.cell(2, 311).value)
 
-    sqlite_connection = dbFunctions.sqlite_connection
-    cursor = sqlite_connection.cursor()
+
     command = "INSERT INTO timetable_updates (session) VALUES (\'" + date.today().strftime('%Y-%m-%d') + "\');"
     cursor.execute(command)
     cursor.close()
@@ -93,8 +98,6 @@ def record_timetable_into_db(group_name, cell_row, cell_col, ws):
 
     sqlite_connection = dbFunctions.sqlite_connection
     cursor = sqlite_connection.cursor()
-    command = "DELETE FROM timetable_pairs;"
-    cursor.execute(command)
 
     for days in range(1, 7):
         for pair in range(1, 7):
@@ -140,4 +143,18 @@ def needToUpdate():
                 print(parameters.OKGREEN + "Database was recently updated (" + str(
                     date.today().date()) + ")" + parameters.ENDC)
                 return False
+    return False
+
+
+def findGroup(group_name):
+    print("Trying to find group " + group_name)
+    sqlite_connection = dbFunctions.sqlite_connection
+    cursor = sqlite_connection.cursor()
+    command = "SELECT DISTINCT group_name FROM timetable_pairs WHERE group_name = \'" + group_name + "\';"
+    c = cursor.execute(command)
+    for row in c:
+        if row[0] is None:
+            return False
+        else:
+            return True
     return False
