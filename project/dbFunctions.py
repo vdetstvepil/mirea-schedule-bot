@@ -5,14 +5,14 @@ import parameters
 
 sqlite_connection = sqlite3.connect("")
 
-
+# Создание базы данных.
 def createDb():
     global sqlite_connection
     sqlite_connection = sqlite3.connect('sqlite_python.db')
     cursor = sqlite_connection.cursor()
     command = "CREATE TABLE timetable_pairs(group_name VARCHAR(10), day_number INTEGER, pair_number INTEGER, " \
-              "pain_even BOOLEAN, pair_name VARCHAR(300), pair_type VARCHAR(10), pair_teacher VARCHAR(100), " \
-              "pair_room VARCHAR(50), PRIMARY KEY(group_name, day_number, pair_number, pain_even));"
+              "pair_even BOOLEAN, pair_name VARCHAR(300), pair_type VARCHAR(10), pair_teacher VARCHAR(100), " \
+              "pair_room VARCHAR(50), PRIMARY KEY(group_name, day_number, pair_number, pair_even));"
     cursor.execute(command)
     command = "CREATE TABLE timetable_updates(id INTEGER PRIMARY KEY AUTOINCREMENT, session TIMESTAMP);"
     cursor.execute(command)
@@ -22,7 +22,7 @@ def createDb():
     sqlite_connection.commit()
     print("Tables created")
 
-
+# Запуск базы данных.
 def loadDb():
     global sqlite_connection
     try:

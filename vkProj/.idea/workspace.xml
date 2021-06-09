@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8396dce-6fc8-48c5-9960-b7c7482029ce" name="Default Changelist" comment="" />
+    <list default="true" id="a8396dce-6fc8-48c5-9960-b7c7482029ce" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../project/file1 — копия.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/.idea/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/.idea/project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/dbFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/../project/dbFunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../project/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/timeTable.py" beforeDir="false" afterPath="$PROJECT_DIR$/../project/timeTable.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,6 +83,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
